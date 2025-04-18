@@ -1,0 +1,10 @@
+dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: projetoudemydbt
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt') }}"
+      threads: 4
+      keyfile: C:/Users/gabri/.dbt/projetoudemydbt-4ca45cb72aa7.json
